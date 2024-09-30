@@ -1,0 +1,145 @@
+{
+    "ConnectionParameter": {
+        "Address": "mqtt://000.00.00.000:0000",
+        "PublisherId": "%ROBOTSERIALNO%",
+        "ConnectionName": "KDC",
+        "Enabled": true
+    },
+    "DataSets": [
+        {
+            "Name": "geninfo_joints",
+            "Enabled": true,
+            "Topic": "Joints_Position",
+            "NetworkMessageContentMask": "NetworkMessageHeader, DataSetMessageHeader, PublisherId",
+            "Type": "DataItems",
+            "PublishingInterval": 250,
+            "DefaultSamplingInterval": 250,
+            "FieldContentMask": "StatusCode, SourceTimestamp",
+            "KeyFrameCount": 1,
+            "MessageContentMask": "SequenceNumber, Timestamp",
+            "DataPoints": [
+                {
+                    "PublishedName": "PositionA1",
+                    "Source": "MotionDevices/Robot/Axes/A1/ParameterSet/ActualPosition"
+                },
+                {
+                    "PublishedName": "PositionA2",
+                    "Source": "MotionDevices/Robot/Axes/A2/ParameterSet/ActualPosition"
+                },
+                {
+                    "PublishedName": "PositionA3",
+                    "Source": "MotionDevices/Robot/Axes/A3/ParameterSet/ActualPosition"
+                },
+                {
+                    "PublishedName": "PositionA4",
+                    "Source": "MotionDevices/Robot/Axes/A4/ParameterSet/ActualPosition"
+                },
+                {
+                    "PublishedName": "PositionA5",
+                    "Source": "MotionDevices/Robot/Axes/A5/ParameterSet/ActualPosition"
+                },
+                {
+                    "PublishedName": "PositionA6",
+                    "Source": "MotionDevices/Robot/Axes/A6/ParameterSet/ActualPosition"
+                }
+            ]
+        },
+
+        {
+            "Name": "geninfo_Vel",
+            "Enabled": true,
+            "Topic": "Joints_Speed",
+            "NetworkMessageContentMask": "NetworkMessageHeader, DataSetMessageHeader, PublisherId",
+            "Type": "DataItems",
+            "PublishingInterval": 250,
+            "DefaultSamplingInterval": 250,
+            "FieldContentMask": "StatusCode, SourceTimestamp",
+            "KeyFrameCount": 1,
+            "MessageContentMask": "SequenceNumber, Timestamp",
+            "DataPoints": [
+                {
+                    "PublishedName": "SpeedA1",
+                    "Source": "MotionDevices/Robot/Axes/A1/ParameterSet/ActualSpeed"
+                },
+                {
+                    "PublishedName": "SpeedA2",
+                    "Source": "MotionDevices/Robot/Axes/A2/ParameterSet/ActualSpeed"
+                },
+                {
+                    "PublishedName": "SpeedA3",
+                    "Source": "MotionDevices/Robot/Axes/A3/ParameterSet/ActualSpeed"
+                },
+                {
+                    "PublishedName": "SpeedA4",
+                    "Source": "MotionDevices/Robot/Axes/A4/ParameterSet/ActualSpeed"
+                },
+                {
+                    "PublishedName": "SpeedA5",
+                    "Source": "MotionDevices/Robot/Axes/A5/ParameterSet/ActualSpeed"
+                },
+                {
+                    "PublishedName": "SpeedA6",
+                    "Source": "MotionDevices/Robot/Axes/A6/ParameterSet/ActualSpeed"
+                }
+            ]
+        },
+    
+        {
+            "Name": "geninfo_TempMot",
+            "Enabled": true,
+            "Topic": "Motor_Temperature",
+            "NetworkMessageContentMask": "NetworkMessageHeader, DataSetMessageHeader, PublisherId",
+            "Type": "DataItems",
+            "PublishingInterval": 250,
+            "DefaultSamplingInterval": 250,
+            "FieldContentMask": "StatusCode, SourceTimestamp",
+            "KeyFrameCount": 1,
+            "MessageContentMask": "SequenceNumber, Timestamp",
+            "DataPoints": [
+                {
+                    "PublishedName": "TempMotorA1",
+                    "Source": "MotionDevices/Robot/PowerTrains/PTA1/Motor_1/ParameterSet/MotorTemperature"
+                },
+                {
+                    "PublishedName": "TempMotorA2",
+                    "Source": "MotionDevices/Robot/PowerTrains/PTA2/Motor_1/ParameterSet/MotorTemperature"
+                },
+                {
+                    "PublishedName": "TempMotorA3",
+                    "Source": "MotionDevices/Robot/PowerTrains/PTA3/Motor_1/ParameterSet/MotorTemperature"
+                },
+                {
+                    "PublishedName": "TempMotorA4",
+                    "Source": "MotionDevices/Robot/PowerTrains/PTA4/Motor_1/ParameterSet/MotorTemperature"
+                },
+                {
+                    "PublishedName": "TempMotorA5",
+                    "Source": "MotionDevices/Robot/PowerTrains/PTA5/Motor_1/ParameterSet/MotorTemperature"
+                },
+                {
+                    "PublishedName": "TempMotorA6",
+                    "Source": "MotionDevices/Robot/PowerTrains/PTA6/Motor_1/ParameterSet/MotorTemperature"
+                }
+            ]
+        },
+
+        {
+            "Name": "geninfo_Status",
+            "Enabled": true,
+            "Topic": "Status",
+            "NetworkMessageContentMask": "NetworkMessageHeader, DataSetMessageHeader, PublisherId",
+            "Type": "DataItems",
+            "PublishingInterval": 250,
+            "DefaultSamplingInterval": 250,
+            "FieldContentMask": "StatusCode, SourceTimestamp",
+            "KeyFrameCount": 1,
+            "MessageContentMask": "SequenceNumber, Timestamp",
+            "DataPoints": [
+                {
+                    "PublishedName": "Status",
+                    "Source": "MotionDevices/Robot/ParameterSet/InMotion"
+                }
+            ]
+        }
+    ]
+}
