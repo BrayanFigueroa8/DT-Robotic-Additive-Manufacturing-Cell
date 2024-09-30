@@ -1,0 +1,1369 @@
+[
+    {
+        "id": "e7bfe576182ba008",
+        "type": "mqtt in",
+        "z": "43f45aab93b7906a",
+        "name": "Joints",
+        "topic": "Joints_Position",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b3f142b9681a7515",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 200,
+        "wires": [
+            [
+                "940259c3b60bcffb"
+            ]
+        ]
+    },
+    {
+        "id": "940259c3b60bcffb",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 1",
+        "func": "\nvar message = JSON.parse(msg.payload);\n\nvar joints = {\n    PositionA1: message.Messages[0].Payload.PositionA1.Value,\n    PositionA2: message.Messages[0].Payload.PositionA2.Value,\n    PositionA3: message.Messages[0].Payload.PositionA3.Value,\n    PositionA4: message.Messages[0].Payload.PositionA4.Value,\n    PositionA5: message.Messages[0].Payload.PositionA5.Value,\n    PositionA6: message.Messages[0].Payload.PositionA6.Value\n};\n\nmsg.payload = joints;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "8bf69cb8d16941e0",
+                "d4f03b6b84aa8cfd",
+                "f4172431dc8014e3",
+                "a3eaea66913f843c",
+                "c10f86b7f2560765",
+                "6c6d939cfd8752a7",
+                "409bcfda708db33a"
+            ]
+        ]
+    },
+    {
+        "id": "8bf69cb8d16941e0",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 2",
+        "func": "var indValorA1 = msg.payload.PositionA1;\n\nvar valorRedondeado = indValorA1.toFixed(4);\n\nmsg.payload = valorRedondeado;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 60,
+        "wires": [
+            [
+                "460526eb0304b01e"
+            ]
+        ]
+    },
+    {
+        "id": "d4f03b6b84aa8cfd",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 3",
+        "func": "var indValorA2 = msg.payload.PositionA2;\n\nvar valorRedondeado = indValorA2.toFixed(4);\n\nmsg.payload = valorRedondeado;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "8cea8f86039f96e3"
+            ]
+        ]
+    },
+    {
+        "id": "f4172431dc8014e3",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 4",
+        "func": "var indValorA3 = msg.payload.PositionA3;\n\nvar valorRedondeado = indValorA3.toFixed(4);\n\nmsg.payload = valorRedondeado;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "f529eaf0db6986f4"
+            ]
+        ]
+    },
+    {
+        "id": "a3eaea66913f843c",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 5",
+        "func": "var indValorA4 = msg.payload.PositionA4;\n\nvar valorRedondeado = indValorA4.toFixed(4);\n\nmsg.payload = valorRedondeado;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "16a5adb7d2d4c43f"
+            ]
+        ]
+    },
+    {
+        "id": "c10f86b7f2560765",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 6",
+        "func": "var indValorA5 = msg.payload.PositionA5;\n\nvar valorRedondeado = indValorA5.toFixed(4);\n\nmsg.payload = valorRedondeado;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "209a131b83659ef6"
+            ]
+        ]
+    },
+    {
+        "id": "6c6d939cfd8752a7",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 7",
+        "func": "var indValorA6 = msg.payload.PositionA6;\n\nvar valorRedondeado = indValorA6.toFixed(4);\n\nmsg.payload = valorRedondeado;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 340,
+        "wires": [
+            [
+                "2f0b032537142872"
+            ]
+        ]
+    },
+    {
+        "id": "8cea8f86039f96e3",
+        "type": "ui_chart",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "e4ed0022.358ee",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Joint 2 [°]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "-175",
+        "ymax": "60",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#fa0019",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f529eaf0db6986f4",
+        "type": "ui_chart",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "96eccc8158bb85c2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Joint 3 [°]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "-120",
+        "ymax": "165",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#00ff4c",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "16a5adb7d2d4c43f",
+        "type": "ui_chart",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "96eccc8158bb85c2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Joint 4 [°]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "-180",
+        "ymax": "180",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#e1ff00",
+            "#aec7e8",
+            "#ff7f0e",
+            "#00f500",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "209a131b83659ef6",
+        "type": "ui_chart",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "2cd91eea117a1d36",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Joint 5 [°]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "-125",
+        "ymax": "125",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#00fbff",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 700,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f0b032537142872",
+        "type": "ui_chart",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "2cd91eea117a1d36",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Joint 6 [°]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "-350",
+        "ymax": "350",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#6600ff",
+            "#aec7e8",
+            "#ff7700",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#00f5f1",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e4559f6da977a9a",
+        "type": "mqtt in",
+        "z": "43f45aab93b7906a",
+        "name": "Speed",
+        "topic": "Joints_Speed",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b3f142b9681a7515",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 560,
+        "wires": [
+            [
+                "e5864d6dc3fb529e"
+            ]
+        ]
+    },
+    {
+        "id": "e5864d6dc3fb529e",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 8",
+        "func": "\nvar message = JSON.parse(msg.payload);\n\nvar velocidades = {\n    SpeedA1: message.Messages[0].Payload.SpeedA1.Value,\n    SpeedA2: message.Messages[0].Payload.SpeedA2.Value,\n    SpeedA3: message.Messages[0].Payload.SpeedA3.Value,\n    SpeedA4: message.Messages[0].Payload.SpeedA4.Value,\n    SpeedA5: message.Messages[0].Payload.SpeedA5.Value,\n    SpeedA6: message.Messages[0].Payload.SpeedA6.Value\n};\n\nmsg.payload = velocidades;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "55b9688fb96a2eaf",
+                "dbf064e3334cc1be",
+                "8cf9f9829518bd60",
+                "3bfaf36edd9354dc",
+                "9e8f18f974bf4138",
+                "e385e0ae436e055c",
+                "409bcfda708db33a"
+            ]
+        ]
+    },
+    {
+        "id": "55b9688fb96a2eaf",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 9",
+        "func": "var indVelA1 = msg.payload.SpeedA1;\n\nvar velocidadRedondeada = indVelA1.toFixed(2);\n\nmsg.payload = velocidadRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "a8ad285f35064428"
+            ]
+        ]
+    },
+    {
+        "id": "dbf064e3334cc1be",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 10",
+        "func": "var indVelA2 = msg.payload.SpeedA2;\n\nvar velocidadRedondeada = indVelA2.toFixed(2);\n\nmsg.payload = velocidadRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 480,
+        "wires": [
+            [
+                "ffca3c233ccd0d1e"
+            ]
+        ]
+    },
+    {
+        "id": "8cf9f9829518bd60",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 11",
+        "func": "var indVelA3 = msg.payload.SpeedA3;\n\nvar velocidadRedondeada = indVelA3.toFixed(2);\n\nmsg.payload = velocidadRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 540,
+        "wires": [
+            [
+                "d60d6bd163786290"
+            ]
+        ]
+    },
+    {
+        "id": "3bfaf36edd9354dc",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 12",
+        "func": "var indVelA4 = msg.payload.SpeedA4;\n\nvar velocidadRedondeada = indVelA4.toFixed(2);\n\nmsg.payload = velocidadRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 600,
+        "wires": [
+            [
+                "05d86d223d478c7a"
+            ]
+        ]
+    },
+    {
+        "id": "9e8f18f974bf4138",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 13",
+        "func": "var indVelA5 = msg.payload.SpeedA5;\n\nvar velocidadRedondeada = indVelA5.toFixed(2);\n\nmsg.payload = velocidadRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 660,
+        "wires": [
+            [
+                "523aaae54ea8e42c"
+            ]
+        ]
+    },
+    {
+        "id": "e385e0ae436e055c",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 14",
+        "func": "var indVelA6 = msg.payload.SpeedA6;\n\nvar velocidadRedondeada = indVelA6.toFixed(2);\n\nmsg.payload = velocidadRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 720,
+        "wires": [
+            [
+                "31c6c0f294ff2536"
+            ]
+        ]
+    },
+    {
+        "id": "ffca3c233ccd0d1e",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "a5f1b61e.7d8168",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Speed A2 [°/s]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d60d6bd163786290",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "d5b12cf6acf2cad1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Speed A3 [°/s]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "05d86d223d478c7a",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "d5b12cf6acf2cad1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Speed A4 [°/s]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 687.765625,
+        "y": 611.75,
+        "wires": []
+    },
+    {
+        "id": "523aaae54ea8e42c",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "7a95d2b8e5ff39f7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Speed A5 [°/s]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "31c6c0f294ff2536",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "7a95d2b8e5ff39f7",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Speed A6 [°/s]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 681.765625,
+        "y": 721.75,
+        "wires": []
+    },
+    {
+        "id": "a8ad285f35064428",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "a5f1b61e.7d8168",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Speed A1 [°/s]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "460526eb0304b01e",
+        "type": "ui_chart",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "e4ed0022.358ee",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "Joint 1 [°]",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-185",
+        "ymax": "185",
+        "removeOlder": "60",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#0011ff",
+            "#aec7e8",
+            "#01f91e",
+            "#947351",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#8100fa"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "409bcfda708db33a",
+        "type": "join",
+        "z": "43f45aab93b7906a",
+        "name": "Concatenate Messages",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1050,
+        "y": 380,
+        "wires": [
+            [
+                "2768a73e90825a25"
+            ]
+        ]
+    },
+    {
+        "id": "2768a73e90825a25",
+        "type": "rbe",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1230,
+        "y": 380,
+        "wires": [
+            [
+                "5ff719be71bfa8cf"
+            ]
+        ]
+    },
+    {
+        "id": "5ff719be71bfa8cf",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "Convert Message to store in Firebase Firestore",
+        "func": "msg._id = 'T' + String(Date.now())\nmsg.Time = new Date() \nmsg.timestamp = Date.now()\nmsg.payload.timestamp = Date.now()\nmsg.payload._id = msg._id\nlet fb = global.get('firebase')\nfb.firestore().doc(`kukakr-meltio-lmd-digitaltwin/${msg._id}`).set(msg.payload).then((ref)=>{\n    \n    node.send( {payload: ref});\n})\n//console.log(msg.payload)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1480,
+        "y": 380,
+        "wires": [
+            [
+                "0f39af4592f59d8e"
+            ]
+        ]
+    },
+    {
+        "id": "9d1a21f0fd9ceba3",
+        "type": "mqtt in",
+        "z": "43f45aab93b7906a",
+        "name": "Temperature Motors",
+        "topic": "Motor_Temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b3f142b9681a7515",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 940,
+        "wires": [
+            [
+                "728d511358c6bdd6"
+            ]
+        ]
+    },
+    {
+        "id": "728d511358c6bdd6",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 22",
+        "func": "var message = JSON.parse(msg.payload);\n\nfunction kelvinToCelsius(tempKelvin) {\n    return tempKelvin - 273.15;\n}\n\nvar tempmotors = {\n    TempMotorA1: kelvinToCelsius(message.Messages[0].Payload.TempMotorA1.Value),\n    TempMotorA2: kelvinToCelsius(message.Messages[0].Payload.TempMotorA2.Value),\n    TempMotorA3: kelvinToCelsius(message.Messages[0].Payload.TempMotorA3.Value),\n    TempMotorA4: kelvinToCelsius(message.Messages[0].Payload.TempMotorA4.Value),\n    TempMotorA5: kelvinToCelsius(message.Messages[0].Payload.TempMotorA5.Value),\n    TempMotorA6: kelvinToCelsius(message.Messages[0].Payload.TempMotorA6.Value)\n};\n\nmsg.payload = tempmotors;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 940,
+        "wires": [
+            [
+                "1976c713a20da85b",
+                "142b28bad1d3de12",
+                "f57bf75802db24ad",
+                "4015457bf2def329",
+                "01830ff07694d623",
+                "25551b3e0aa05ea7",
+                "409bcfda708db33a"
+            ]
+        ]
+    },
+    {
+        "id": "1976c713a20da85b",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 23",
+        "func": "var indTempA1 = msg.payload.TempMotorA1;\n\nvar temperaturaRedondeada = indTempA1.toFixed(2);\n\nmsg.payload = temperaturaRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 800,
+        "wires": [
+            [
+                "04a4a7dcd055d8ae"
+            ]
+        ]
+    },
+    {
+        "id": "142b28bad1d3de12",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 24",
+        "func": "var indTempA2 = msg.payload.TempMotorA2;\n\nvar temperaturaRedondeada = indTempA2.toFixed(2);\n\nmsg.payload = temperaturaRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 860,
+        "wires": [
+            [
+                "ba313c84c9bbcb63"
+            ]
+        ]
+    },
+    {
+        "id": "f57bf75802db24ad",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 25",
+        "func": "var indTempA3 = msg.payload.TempMotorA3;\n\nvar temperaturaRedondeada = indTempA3.toFixed(2);\n\nmsg.payload = temperaturaRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 920,
+        "wires": [
+            [
+                "be47b2edc085d680"
+            ]
+        ]
+    },
+    {
+        "id": "4015457bf2def329",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 26",
+        "func": "var indTempA4 = msg.payload.TempMotorA4;\n\nvar temperaturaRedondeada = indTempA4.toFixed(2);\n\nmsg.payload = temperaturaRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 980,
+        "wires": [
+            [
+                "446926e9fcf99a4b"
+            ]
+        ]
+    },
+    {
+        "id": "01830ff07694d623",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 27",
+        "func": "var indTempA5 = msg.payload.TempMotorA5;\n\nvar temperaturaRedondeada = indTempA5.toFixed(2);\n\nmsg.payload = temperaturaRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1040,
+        "wires": [
+            [
+                "618f2d22816d1626"
+            ]
+        ]
+    },
+    {
+        "id": "25551b3e0aa05ea7",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 28",
+        "func": "var indTempA6 = msg.payload.TempMotorA6;\n\nvar temperaturaRedondeada = indTempA6.toFixed(2);\n\n\nmsg.payload = temperaturaRedondeada;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1080,
+        "wires": [
+            [
+                "5a243f5d60380391"
+            ]
+        ]
+    },
+    {
+        "id": "ba313c84c9bbcb63",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "ecfd1f2be60bc544",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Motor Temperature A2 [°C]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "be47b2edc085d680",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "249cce2207fde9a1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Motor Temperature A3 [°C]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "446926e9fcf99a4b",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "249cce2207fde9a1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Motor Temperature A4 [°C]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 797.765625,
+        "y": 971.75,
+        "wires": []
+    },
+    {
+        "id": "618f2d22816d1626",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "d21660b716ea6584",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Motor Temperature A5 [°C]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "5a243f5d60380391",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "d21660b716ea6584",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Motor Temperature A6 [°C]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 791.765625,
+        "y": 1061.75,
+        "wires": []
+    },
+    {
+        "id": "04a4a7dcd055d8ae",
+        "type": "ui_gauge",
+        "z": "43f45aab93b7906a",
+        "name": "",
+        "group": "ecfd1f2be60bc544",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Motor Temperature A1 [°C]",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "fd59947bef7e3395",
+        "type": "function",
+        "z": "43f45aab93b7906a",
+        "name": "function 29",
+        "func": "var message = JSON.parse(msg.payload);\n\nvar Statusr = {\n Status: message.Messages[0].Payload.Status.Value\n};\n\nmsg.payload = Statusr;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1140,
+        "wires": [
+            [
+                "409bcfda708db33a"
+            ]
+        ]
+    },
+    {
+        "id": "0f39af4592f59d8e",
+        "type": "firestore-add",
+        "z": "43f45aab93b7906a",
+        "name": "kukakr-meltio-lmd-digitaltwin",
+        "cred": "13e96bc6ebf6a7f1",
+        "x": 1800,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7038e980097f2523",
+        "type": "mqtt in",
+        "z": "43f45aab93b7906a",
+        "name": "Status",
+        "topic": "Status",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b3f142b9681a7515",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 50,
+        "y": 1140,
+        "wires": [
+            [
+                "fd59947bef7e3395"
+            ]
+        ]
+    },
+    {
+        "id": "b3f142b9681a7515",
+        "type": "mqtt-broker",
+        "name": "kuka",
+        "broker": "000.00.00.000",
+        "port": "0000",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": "",
+        "credentials": {
+            "user": "",
+            "password": ""
+        }
+    },
+    {
+        "id": "e4ed0022.358ee",
+        "type": "ui_group",
+        "name": "Joints Position",
+        "tab": "23689b26.e3e6d4",
+        "order": 1,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "96eccc8158bb85c2",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "23689b26.e3e6d4",
+        "order": 2,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2cd91eea117a1d36",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "23689b26.e3e6d4",
+        "order": 3,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a5f1b61e.7d8168",
+        "type": "ui_group",
+        "name": "Joints Speed",
+        "tab": "e1f4a25a.e38df",
+        "order": 1,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d5b12cf6acf2cad1",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "e1f4a25a.e38df",
+        "order": 2,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7a95d2b8e5ff39f7",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "e1f4a25a.e38df",
+        "order": 3,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ecfd1f2be60bc544",
+        "type": "ui_group",
+        "name": "Temperature Motors",
+        "tab": "92d049d0805a8247",
+        "order": 1,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "249cce2207fde9a1",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "92d049d0805a8247",
+        "order": 2,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d21660b716ea6584",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "92d049d0805a8247",
+        "order": 3,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "13e96bc6ebf6a7f1",
+        "type": "firebase-config",
+        "name": "kukakr-meltio-lmd-digitaltwin",
+        "cred": "Credentials",
+        "dburl": "Database URL",
+        "bucket": ""
+    },
+    {
+        "id": "23689b26.e3e6d4",
+        "type": "ui_tab",
+        "name": "Joints Position",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e1f4a25a.e38df",
+        "type": "ui_tab",
+        "name": "Joints Speed",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "92d049d0805a8247",
+        "type": "ui_tab",
+        "name": "Temperature Motors",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]
