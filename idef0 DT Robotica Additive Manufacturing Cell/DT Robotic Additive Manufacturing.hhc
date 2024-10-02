@@ -1,0 +1,344 @@
+<HTML>
+<HEAD>
+<meta name="GENERATOR" CONTENT="KBSI's AI0Win">
+</HEAD>
+<BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Project Summary">
+		<param name="Local" value="summary.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Activity Models">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DT-realtime">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="DT-realtime [Model]">
+				<param name="Local" value="dgm23.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="A0: Digital Twin - Robotic Additive Manufacturing Cell [Activity-in-Diagram]">
+				<param name="Local" value="actuse176.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value=" Decomp of Activity: A0: Digital Twin - Robotic Additive Manufacturing Cell">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="A0: Digital Twin - Robotic Additive Manufacturing Cell [Diagram]">
+					<param name="Local" value="dgm177.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="A1: Digital Twin - RoboDK, Node-RED, MQTT and Firebase [Activity-in-Diagram]">
+					<param name="Local" value="actuse182.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="A2: Digital Twin - KUKA IIQoT [Activity-in-Diagram]">
+					<param name="Local" value="actuse226.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="A3: Digital Twin - Meltio Dashboard [Activity-in-Diagram]">
+					<param name="Local" value="actuse241.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value=" Decomp of Activity: A1: Digital Twin - RoboDK, Node-RED, MQTT and Firebase">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A1: Digital Twin - RoboDK, Node-RED, MQTT and Firebase [Diagram]">
+						<param name="Local" value="dgm122.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A11: Importing KUKA Data into RoboDK [Activity-in-Diagram]">
+						<param name="Local" value="actuse140.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A12: Importing KUKA Data into Node-Red [Activity-in-Diagram]">
+						<param name="Local" value="actuse150.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A13: Real-Time Monitoring [Activity-in-Diagram]">
+						<param name="Local" value="actuse141.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A14: Sending Monitored KUKA Data to Cloud [Activity-in-Diagram]">
+						<param name="Local" value="actuse143.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A15: KUKA Data Monitoring in Cloud [Activity-in-Diagram]">
+						<param name="Local" value="actuse145.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value=" Decomp of Activity: A2: Digital Twin - KUKA IIQoT">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A2: Digital Twin - KUKA IIQoT [Diagram]">
+						<param name="Local" value="dgm282.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A21: Importing KUKA Data to KUKA IIQoT Server [Activity-in-Diagram]">
+						<param name="Local" value="actuse298.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A22: Real-Time Monitoring KUKA Data in IIQoT [Activity-in-Diagram]">
+						<param name="Local" value="actuse300.html">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value=" Decomp of Activity: A3: Digital Twin - Meltio Dashboard">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A3: Digital Twin - Meltio Dashboard [Diagram]">
+						<param name="Local" value="dgm317.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A31: Importing Meltio Monitoring Data to Meltio Server [Activity-in-Diagram]">
+						<param name="Local" value="actuse328.html">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="A32: Real-Time Monitoring Meltio Data in Meltio Server [Activity-in-Diagram]">
+						<param name="Local" value="actuse330.html">
+						</OBJECT>
+				</UL>
+			</UL>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Activity Pool">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Digital Twin - RoboDK, Node-RED, MQTT and Firebase [Activity]">
+			<param name="Local" value="act24.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Digital Twin - KUKA IIQoT [Activity]">
+			<param name="Local" value="act26.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Digital Twin - Meltio Dashboard [Activity]">
+			<param name="Local" value="act28.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing KUKA Data into RoboDK [Activity]">
+			<param name="Local" value="act113.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Real-Time Monitoring [Activity]">
+			<param name="Local" value="act115.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sending Monitored KUKA Data to Cloud [Activity]">
+			<param name="Local" value="act142.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA Data Monitoring in Cloud [Activity]">
+			<param name="Local" value="act144.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing KUKA Data into Node-Red [Activity]">
+			<param name="Local" value="act149.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Digital Twin - Robotic Additive Manufacturing Cell [Activity]">
+			<param name="Local" value="act175.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing KUKA Data to KUKA IIQoT Server [Activity]">
+			<param name="Local" value="act297.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Real-Time Monitoring KUKA Data in IIQoT [Activity]">
+			<param name="Local" value="act299.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Importing Meltio Monitoring Data to Meltio Server [Activity]">
+			<param name="Local" value="act327.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Real-Time Monitoring Meltio Data in Meltio Server [Activity]">
+			<param name="Local" value="act329.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Concept Pool">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joints Position [Concept]">
+			<param name="Local" value="conc30.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joints Speed [Concept]">
+			<param name="Local" value="conc32.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joints Motor Temperature [Concept]">
+			<param name="Local" value="conc34.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA Data [Concept]">
+			<param name="Local" value="conc36.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Meltio Data [Concept]">
+			<param name="Local" value="conc38.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA KR70 R2100 [Concept]">
+			<param name="Local" value="conc40.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA KC5 Controller [Concept]">
+			<param name="Local" value="conc42.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Operator [Concept]">
+			<param name="Local" value="conc44.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Meltio Print Head [Concept]">
+			<param name="Local" value="conc46.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Meltio Engine System [Concept]">
+			<param name="Local" value="conc48.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ISO 23247 (DT Framework) [Concept]">
+			<param name="Local" value="conc50.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MQTT Protocol [Concept]">
+			<param name="Local" value="conc52.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="TCP/IP Socket [Concept]">
+			<param name="Local" value="conc54.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Internet [Concept]">
+			<param name="Local" value="conc57.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="RoboDK [Concept]">
+			<param name="Local" value="conc60.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Node-Red Server [Concept]">
+			<param name="Local" value="conc62.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA IIQoT Server [Concept]">
+			<param name="Local" value="conc64.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Meltio Server [Concept]">
+			<param name="Local" value="conc66.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="OPC-UA [Concept]">
+			<param name="Local" value="conc68.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Firestore Cloud [Concept]">
+			<param name="Local" value="conc70.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Microsoft Azure Cloud [Concept]">
+			<param name="Local" value="conc72.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Meltio Cloud [Concept]">
+			<param name="Local" value="conc74.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="3D Simulation - Real-Time DT RoboDK [Concept]">
+			<param name="Local" value="conc76.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="3D Simulation - Real-Time DT RoboDK Web [Concept]">
+			<param name="Local" value="conc79.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Data Table in Firestore Cloud [Concept]">
+			<param name="Local" value="conc81.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="2D Data Panel in Node-Red [Concept]">
+			<param name="Local" value="conc83.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="2D Data Panel in KUKA IIQoT [Concept]">
+			<param name="Local" value="conc85.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Meltio Dashboard [Concept]">
+			<param name="Local" value="conc87.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Desktop [Concept]">
+			<param name="Local" value="conc89.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA Conectivity Box Typ A [Concept]">
+			<param name="Local" value="conc91.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Linux-Based Virtual Machine [Concept]">
+			<param name="Local" value="conc93.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MQTT Server [Concept]">
+			<param name="Local" value="conc146.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA Data in RoboDK [Concept]">
+			<param name="Local" value="conc151.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA Data in Node-Red [Concept]">
+			<param name="Local" value="conc153.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA Monitored Data in Cloud [Concept]">
+			<param name="Local" value="conc155.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="3D Cell Model [Concept]">
+			<param name="Local" value="conc158.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="KUKA Data in KUKA IIQoT [Concept]">
+			<param name="Local" value="conc303.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Meltio Monitoring Data in Meltio Server [Concept]">
+			<param name="Local" value="conc331.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Property Pool">
+		</OBJECT>
+	<UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Source Pool">
+		</OBJECT>
+	<UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Note Pool">
+		</OBJECT>
+	<UL>
+	</UL>
+</UL>
+</BODY>
+</HTML>

@@ -1,0 +1,305 @@
+<HTML>
+   <HEAD>
+      <STYLE>
+         SPAN {cursor: hand ; font-size: 8pt; font-family:Verdana,Arial,Helvetica;}
+         .bright {color: red ; font-size: 8pt; font-family:Verdana,Arial,Helvetica;}
+         .dark {color: black ; font-size: 8pt; font-family:Verdana,Arial,Helvetica;}
+      </STYLE>
+ <SCRIPT LANGUAGE="JScript">
+    var curLevel = 0;
+    var prevElement = null;
+    var prevLevel;
+    var prevID;
+    var builtHTML = "";
+ function MakeTree() {
+    var coll = document.all;
+    var level;
+    var id;
+    var tagBegin;
+    for (i=document.body.sourceIndex+1; i<coll.length; i++) {
+       switch (coll[i].tagName.substring(0,3)) {
+          case "LVL":        
+             level = parseInt( coll[i].tagName.charAt(3) + coll[i].tagName.charAt(4) );
+             break;
+          default:
+             level = -1;
+       }
+       if (level!=-1) {
+          id = i;
+          addElem(coll[i], level, id);
+       }
+    }
+    addElem(prevElement,0, prevID);
+    divWrap();
+    //   document.all.Debug.outerText = MyTree.innerHTML;
+ }
+ function addElem(el, level, id) {
+    if (prevElement == null)
+    {
+       prevElement = el;
+       prevLevel = level;
+       prevID = id;
+       return;
+    }
+    var s = "&nbsp;";
+    var s1 = "&nbsp;&nbsp;";
+    for (var j=0; j<prevLevel; j++)
+       s = s + s1;
+    
+    if (level > curLevel)
+    {
+       //alert(prevElement.outerHTML);
+       builtHTML += "<SPAN STYLE='cursor:hand' CLASS='dark'  IURL='" 
+                 + prevElement.getAttribute('IURL') 
+                 + "' ";
+
+       if (prevElement.getAttribute('IURL') != "")
+         builtHTML += "FLASHER"; 
+
+       builtHTML += " LEVEL='" 
+                 + curLevel
+                 + "' IS_POOL='"
+                 + prevElement.getAttribute('IS_POOL')
+                 + "' >"
+                 + s; 
+
+       
+       if( (curLevel == 0) || (prevElement.getAttribute('IS_POOL')=="1") )
+       {
+         builtHTML += "<IMG SRC='expand.gif' ID='OUT"; 
+       }
+       else if( curLevel == 1 )
+       {
+         builtHTML += "<IMG SRC='diagram+.gif' ID='OUT";
+       }
+       else
+       {
+         builtHTML += "<IMG SRC='activity+.gif' ID='OUT";
+       }
+       builtHTML += prevID.toString() 
+                 + "' CLASS='collapsible' "
+                 + " LEVEL='"
+                 + curLevel
+                 + "' IS_POOL='"
+                 + prevElement.getAttribute('IS_POOL')  
+                 + "'> &nbsp;&nbsp;" 
+                 + prevElement.getAttribute('ITEXT') 
+                 + "<BR></SPAN>" 
+                 + "<DIV ID='OUT" 
+                 + prevID.toString() 
+                 + "D' STYLE='display:none'  >"; 
+       curLevel = level;
+    }
+    else
+    {
+       builtHTML += "<SPAN STYLE='cursor:hand'  CLASS='dark' IURL='" 
+                 + prevElement.getAttribute('IURL'); 
+
+       if ( prevElement.getAttribute('IURL') != "" )
+         builtHTML += "' FLASHER"; 
+  
+       builtHTML += " LEVEL='" 
+                 + curLevel
+                 + "' >"
+                 + s; 
+       if( (curLevel == 0) || (prevElement.getAttribute('IS_POOL')=="1") )
+       {
+         builtHTML += "<IMG SRC='leaf.gif' "; 
+       }
+       else if( curLevel == 1 )
+       {
+         builtHTML += "<IMG SRC='diagram.gif' ";
+       }
+       else
+       {
+         builtHTML += "<IMG SRC='activity.gif' ";
+       }
+       builtHTML += " LEVEL='"
+                 + curLevel
+                 + "'>&nbsp;" 
+                 + prevElement.getAttribute('ITEXT') 
+                 + "<BR></SPAN>";
+       if (level < curLevel)
+       {
+          for (var tplev = level; tplev < curLevel; tplev++)
+             builtHTML += "</DIV>";
+          curLevel = level;
+       }
+    }   
+  
+    prevElement = el;
+    prevLevel = level;
+    prevID = id;
+ }
+
+ function divWrap() {
+    while (curLevel > 0)
+    {
+       builtHTML +=      "</DIV>";
+       curLevel--;
+    }
+    document.all.MyTree.innerHTML=builtHTML;
+ }
+
+ function clickHandler() {
+    var colId, colElem ;
+    var tpURL;
+    gifElem = window.event.srcElement;
+    if (gifElem.className == "collapsible") {
+ 
+       colId = gifElem.id + "D";
+       colElem = document.all(colId);
+       if (colElem.style.display == "none") {
+          colElem.style.display = "" ;
+          if( (gifElem.getAttribute("LEVEL") == "0") || (gifElem.getAttribute('IS_POOL')=="1") )
+          {
+            gifElem.src = "fixed.gif" ;
+            
+          }
+          else if( gifElem.getAttribute("LEVEL") == "1" )
+          {
+            gifElem.src = "diagram.gif" ;
+          }
+          else
+          {
+            gifElem.src = "activity.gif" ;
+          }
+       } else {
+          colElem.style.display = "none" ;
+          if( (gifElem.getAttribute("LEVEL") == "0") || (gifElem.getAttribute('IS_POOL')=="1") )
+          {
+            gifElem.src = "expand.gif" ;
+          }
+          else if( gifElem.getAttribute("LEVEL") == "1" )
+          {
+            gifElem.src = "diagram+.gif" ;
+          }
+          else
+          {
+            gifElem.src = "activity+.gif" ;
+          }
+       }
+    }
+    if (gifElem.className == "bright")
+    {  
+       with (parent.frames[1].document.all)
+       {
+        if(gifElem.getAttribute("IURL") != "")
+          top.Right.location=gifElem.getAttribute("IURL");
+       }
+    }
+ }
+ function MakeBright() {
+    el = event.srcElement ;
+    if (el.getAttribute("FLASHER") != null) {
+       el.className = "bright" ;
+    }
+ }
+ 
+ function MakeDark() {
+    el = event.srcElement ;
+    if (el.getAttribute("FLASHER") != null) {
+       el.className = "dark";
+    }
+ }
+</SCRIPT></HEAD>
+
+<BODY  ONLOAD="MakeTree()">
+<A HREF=summary.html TARGET=Right>Project Summary</A><br><br>
+<NOBR><A HREF=TOC_Hier.html>Expanded Tree</A></NOBR><br>
+<NOBR><A HREF=TOC.html>Collapsed Tree</A></NOBR><br>
+<LVL0  ITEXT="Diagrams" IURL="" ITARGET=></LVL0>
+<LVL1  ITEXT="DT-realtime" IURL="dgm23.html" ITARGET=Right></LVL1>
+<LVL2  ITEXT="Digital Twin - Robotic Additive Manufacturing Cell" IURL="actuse176.html" ITARGET=Right></LVL2>
+<LVL3  ITEXT="A0: Digital Twin - Robotic Additive Manufacturing Cell" IURL="dgm177.html" ITARGET=Right></LVL3>
+<LVL4  ITEXT="Digital Twin - RoboDK, Node-RED, MQTT and Firebase" IURL="actuse182.html" ITARGET=Right></LVL4>
+<LVL5  ITEXT="A1: Digital Twin - RoboDK, Node-RED, MQTT and Firebase" IURL="dgm122.html" ITARGET=Right></LVL5>
+<LVL6  ITEXT="Importing KUKA Data into RoboDK" IURL="actuse140.html" ITARGET=Right></LVL6>
+<LVL6  ITEXT="Importing KUKA Data into Node-Red" IURL="actuse150.html" ITARGET=Right></LVL6>
+<LVL6  ITEXT="Real-Time Monitoring" IURL="actuse141.html" ITARGET=Right></LVL6>
+<LVL6  ITEXT="Sending Monitored KUKA Data to Cloud" IURL="actuse143.html" ITARGET=Right></LVL6>
+<LVL6  ITEXT="KUKA Data Monitoring in Cloud" IURL="actuse145.html" ITARGET=Right></LVL6>
+<LVL4  ITEXT="Digital Twin - KUKA IIQoT" IURL="actuse226.html" ITARGET=Right></LVL4>
+<LVL5  ITEXT="A2: Digital Twin - KUKA IIQoT" IURL="dgm282.html" ITARGET=Right></LVL5>
+<LVL6  ITEXT="Importing KUKA Data to KUKA IIQoT Server" IURL="actuse298.html" ITARGET=Right></LVL6>
+<LVL6  ITEXT="Real-Time Monitoring KUKA Data in IIQoT" IURL="actuse300.html" ITARGET=Right></LVL6>
+<LVL4  ITEXT="Digital Twin - Meltio Dashboard" IURL="actuse241.html" ITARGET=Right></LVL4>
+<LVL5  ITEXT="A3: Digital Twin - Meltio Dashboard" IURL="dgm317.html" ITARGET=Right></LVL5>
+<LVL6  ITEXT="Importing Meltio Monitoring Data to Meltio Server" IURL="actuse328.html" ITARGET=Right></LVL6>
+<LVL6  ITEXT="Real-Time Monitoring Meltio Data in Meltio Server" IURL="actuse330.html" ITARGET=Right></LVL6>
+<LVL0  ITEXT="Pool Items" IURL="" ITARGET=></LVL0>
+<LVL1  ITEXT="Activity Pool" IS_POOL="1" IURL=""></LVL1>
+<LVL2 ITEXT="Digital Twin - KUKA IIQoT" IURL="act26.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Digital Twin - Meltio Dashboard" IURL="act28.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Digital Twin - RoboDK, Node-RED, MQTT and Firebase" IURL="act24.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Digital Twin - Robotic Additive Manufacturing Cell" IURL="act175.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Importing KUKA Data into Node-Red" IURL="act149.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Importing KUKA Data into RoboDK" IURL="act113.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Importing KUKA Data to KUKA IIQoT Server" IURL="act297.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Importing Meltio Monitoring Data to Meltio Server" IURL="act327.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA Data Monitoring in Cloud" IURL="act144.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Real-Time Monitoring" IURL="act115.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Real-Time Monitoring KUKA Data in IIQoT" IURL="act299.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Real-Time Monitoring Meltio Data in Meltio Server" IURL="act329.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Sending Monitored KUKA Data to Cloud" IURL="act142.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL1  ITEXT="Concept Pool" IS_POOL="1" IURL=""></LVL1>
+<LVL2 ITEXT="2D Data Panel in KUKA IIQoT" IURL="conc85.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="2D Data Panel in Node-Red" IURL="conc83.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="3D Cell Model" IURL="conc158.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="3D Simulation - Real-Time DT RoboDK" IURL="conc76.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="3D Simulation - Real-Time DT RoboDK Web" IURL="conc79.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Data Table in Firestore Cloud" IURL="conc81.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Desktop" IURL="conc89.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Firestore Cloud" IURL="conc70.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Internet" IURL="conc57.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="ISO 23247 (DT Framework)" IURL="conc50.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Joints Motor Temperature" IURL="conc34.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Joints Position" IURL="conc30.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Joints Speed" IURL="conc32.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA Conectivity Box Typ A" IURL="conc91.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA Data" IURL="conc36.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA Data in KUKA IIQoT" IURL="conc303.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA Data in Node-Red" IURL="conc153.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA Data in RoboDK" IURL="conc151.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA IIQoT Server" IURL="conc64.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA KC5 Controller" IURL="conc42.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA KR70 R2100" IURL="conc40.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="KUKA Monitored Data in Cloud" IURL="conc155.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Linux-Based Virtual Machine" IURL="conc93.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Meltio Cloud" IURL="conc74.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Meltio Dashboard" IURL="conc87.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Meltio Data" IURL="conc38.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Meltio Engine System" IURL="conc48.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Meltio Monitoring Data in Meltio Server" IURL="conc331.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Meltio Print Head" IURL="conc46.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Meltio Server" IURL="conc66.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Microsoft Azure Cloud" IURL="conc72.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="MQTT Protocol" IURL="conc52.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="MQTT Server" IURL="conc146.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Node-Red Server" IURL="conc62.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="OPC-UA" IURL="conc68.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="Operator" IURL="conc44.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="RoboDK" IURL="conc60.html" ITARGET=Right IS_POOL="1"></LVL2>
+<LVL2 ITEXT="TCP/IP Socket" IURL="conc54.html" ITARGET=Right IS_POOL="1"></LVL2>
+  <TABLE WIDTH=95% BORDER=0 ALIGN=left>
+
+    <TR><TD BGCOLOR="lightyellow">&nbsp;</TD></TR>
+    <TR><TD WIDTH=350 HEIGHT=340 VALIGN="top" BGCOLOR="lightyellow">
+    <DIV ID=MyTree>
+    </DIV>
+    <DIV ID=Debug>
+    </DIV>
+    </TD></TR>
+ </TABLE>
+<SCRIPT LANUGAGE="JScript">
+   document.onclick = clickHandler;
+   document.onmouseover = MakeBright;
+   document.onmouseout = MakeDark;
+</SCRIPT>
+<br clear=left>
+
+<br>
+<center><A HREF="mailto:brayan.s.figueroa47@gmail.com?subject=Re: Activity Modeling Project ''">Send Feedback</A></center>
+<br>
+</BODY>
+</HTML>
