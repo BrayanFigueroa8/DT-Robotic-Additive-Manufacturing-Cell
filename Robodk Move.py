@@ -1,5 +1,5 @@
-# Brayan Stiven Figueroa Betancourth
 # 3D movement simulation module AM KUKA-Meltio in RoboDK
+# Brayan S.Figueroa
 
 from robodk import robolink    # RoboDK API
 from robodk import robomath    # Robot toolbox
